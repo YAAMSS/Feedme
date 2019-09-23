@@ -33,7 +33,7 @@ class MainActivity  : AppCompatActivity() {
         decideBtn.setOnClickListener {
             val random = Random()
             val randomFood = random.nextInt(db.foodDao().getDataCount())
-           // selectedFoodTxt.text = foodList[randomFood].food
+//            selectedFoodTxt.text = foodList[randomFood].food
         }
 
         addFoodBtn.setOnClickListener {
@@ -43,8 +43,6 @@ class MainActivity  : AppCompatActivity() {
             addFoodTxt.text?.clear()
             println(foodList)
         }
-
-
     }
 }
 
