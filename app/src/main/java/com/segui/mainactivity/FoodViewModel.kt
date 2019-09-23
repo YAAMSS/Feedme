@@ -1,9 +1,11 @@
-package com.segui.dinnerdecider
+package com.segui.mainactivity
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.segui.models.Food
+import com.segui.database.FoodDatabase
+import com.segui.repository.FoodRepository
+import com.segui.model.Food
 
 class FoodViewModel(application: Application) : AndroidViewModel(Application()){
 

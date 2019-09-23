@@ -1,11 +1,11 @@
-package com.segui.dinnerdecider
+package com.segui.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.segui.dao.FoodDao
-import com.segui.models.Food
+import com.segui.model.Food
 
 @Database(entities = [Food::class], version =1)
 abstract class FoodDatabase : RoomDatabase() {

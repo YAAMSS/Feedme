@@ -1,11 +1,11 @@
-package com.segui.dinnerdecider
+package com.segui.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.segui.dao.UserDao
-import com.segui.models.User
+import com.segui.model.User
 
 
 @Database(entities = [User::class], version = 1)

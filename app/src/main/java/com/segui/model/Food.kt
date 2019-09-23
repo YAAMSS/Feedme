@@ -1,4 +1,4 @@
-package com.segui.models
+package com.segui.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

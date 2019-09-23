@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.segui.models.Food
+import com.segui.model.Food
 
 @Dao
 interface FoodDao {

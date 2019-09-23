@@ -1,8 +1,8 @@
-package com.segui.dinnerdecider
+package com.segui.repository
 
 import androidx.lifecycle.LiveData
 import com.segui.dao.FoodDao
-import com.segui.models.Food
+import com.segui.model.Food
 
 class FoodRepository(foodDao: FoodDao) {
 

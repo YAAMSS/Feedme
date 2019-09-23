@@ -1,11 +1,13 @@
-package com.segui.dinnerdecider
+package com.segui.mainactivity
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.segui.models.Food
+import com.segui.database.FoodDatabase
+import com.segui.dinnerdecider.R
+import com.segui.model.Food
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
