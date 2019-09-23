@@ -8,7 +8,7 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "26.0.3"
+    buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "com.segui.dinnerdecider"
         minSdkVersion 19
