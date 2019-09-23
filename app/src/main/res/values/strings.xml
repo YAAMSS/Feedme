@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MealSelecter</string>
+    <string name="chinese">Chinese</string>
+    <string name="decide">DECIDE!</string>
+    <string name="add_new_food">add new food…</string>
+    <string name="add_food">ADD FOOD</string>
+    <string name="todo">TODO</string>
+</resources>

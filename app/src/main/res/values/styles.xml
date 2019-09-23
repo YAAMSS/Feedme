@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="hintTextAppearance">@style/HintText</item>
+        <item name="android:paddingBottom">18dp</item>
+        <item name="android:textSize">20sp</item>
+
+    </style>
+
+    <style name="HintText" parent="TextAppearance.Design.Hint">
+        <!-- Inactive and Active label color, pointing to a selector-->
+       // <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+
+</resources>
