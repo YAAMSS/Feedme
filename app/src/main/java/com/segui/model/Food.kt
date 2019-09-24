@@ -9,4 +9,6 @@ data class Food(
     @PrimaryKey
     @ColumnInfo(name = "food_name")
     val foodName: String
-)
+) {
+    override fun toString(): String = foodName
+}

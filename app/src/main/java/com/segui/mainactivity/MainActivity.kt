@@ -13,8 +13,6 @@ import java.util.*
 
 class MainActivity  : AppCompatActivity() {
 
-    private var foodList = listOf<Food>()
-
     private lateinit var viewModel: FoodViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,29 +20,26 @@ class MainActivity  : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewModel = ViewModelProviders.of(this).get(FoodViewModel::class.java)
-        viewModel.food.observe(this, Observer {
-            food -> food.let {
-            foodList = it } })
+
+        viewModel.allFood.observe(this, Observer {
+            Log.d("foodlist", it.toString())
+        })
+
         val db: FoodDatabase = FoodDatabase.getInstance(applicationContext)
-        val foodList = viewModel.food
 
         Log.d("listsize", db.foodDao().getDataCount().toString())
-        Log.d("foodlist", foodList.value.toString())
-
 
         decideBtn.setOnClickListener {
             val random = Random()
             val randomFood = random.nextInt(db.foodDao().getDataCount())
-//            selectedFoodTxt.text = foodList[randomFood].food
+            selectedFoodTxt.text = viewModel.allFood.value?.get(randomFood).toString()
         }
 
         addFoodBtn.setOnClickListener {
             //val newFood = addFoodTxt.text.toString()
             val newFood = Food(addFoodTxt.text.toString())
             db.foodDao().insert(newFood)
-            addFoodTxt.text?.clear()
-            println(foodList)
-        }
+            addFoodTxt.text?.clear() }
     }
 }
 
