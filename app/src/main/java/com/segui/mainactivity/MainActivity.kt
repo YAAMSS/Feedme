@@ -27,16 +27,15 @@ class MainActivity  : AppCompatActivity() {
 
         val db: FoodDatabase = FoodDatabase.getInstance(applicationContext)
 
-        Log.d("listsize", db.foodDao().getDataCount().toString())
+        Log.d("listsize", viewModel.foodCount.toString())
 
         decideBtn.setOnClickListener {
             val random = Random()
-            val randomFood = random.nextInt(db.foodDao().getDataCount())
+            val randomFood = random.nextInt(viewModel.foodCount)
             selectedFoodTxt.text = viewModel.allFood.value?.get(randomFood).toString()
         }
 
         addFoodBtn.setOnClickListener {
-            //val newFood = addFoodTxt.text.toString()
             val newFood = Food(addFoodTxt.text.toString())
             db.foodDao().insert(newFood)
             addFoodTxt.text?.clear() }

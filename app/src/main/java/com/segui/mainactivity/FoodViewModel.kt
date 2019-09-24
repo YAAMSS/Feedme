@@ -11,11 +11,13 @@ class FoodViewModel(application: Application) : AndroidViewModel(application){
 
     private val repository: FoodRepository
     val allFood: LiveData<List<Food>>
+    val foodCount: Int
 
     init {
         val foodDao = FoodDatabase.getInstance(application).foodDao()
         repository = FoodRepository(foodDao)
         allFood = repository.foodList
+        foodCount = repository.foodCount
     }
 
 }

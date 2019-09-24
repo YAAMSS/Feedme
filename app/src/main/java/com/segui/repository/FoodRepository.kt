@@ -7,4 +7,6 @@ import com.segui.model.Food
 class FoodRepository(foodDao: FoodDao) {
 
     val foodList: LiveData<List<Food>> = foodDao.getAll()
+
+    val foodCount = foodDao.getDataCount()
 }
