@@ -23,21 +23,17 @@ class MainActivity  : AppCompatActivity() {
 
         viewModel.allFood.observe(this, Observer {
             Log.d("foodlist", it.toString())
+            Log.d("foodlist", "Size of food list is ${viewModel.foodCount}")
         })
 
-        val db: FoodDatabase = FoodDatabase.getInstance(applicationContext)
-
-        Log.d("listsize", viewModel.foodCount.toString())
-
         decideBtn.setOnClickListener {
-            val random = Random()
-            val randomFood = random.nextInt(viewModel.foodCount)
+            val randomFood = Random().nextInt(viewModel.foodCount)
             selectedFoodTxt.text = viewModel.allFood.value?.get(randomFood).toString()
         }
 
         addFoodBtn.setOnClickListener {
             val newFood = Food(addFoodTxt.text.toString())
-            db.foodDao().insert(newFood)
+            viewModel.insert(newFood)
             addFoodTxt.text?.clear() }
     }
 }

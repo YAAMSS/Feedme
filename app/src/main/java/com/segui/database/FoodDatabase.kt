@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.segui.dao.FoodDao
 import com.segui.model.Food
 
-@Database(entities = [Food::class], version =1)
+@Database(entities = [Food::class], version = 1)
 abstract class FoodDatabase : RoomDatabase() {
     abstract fun foodDao(): FoodDao
 
@@ -23,7 +23,6 @@ abstract class FoodDatabase : RoomDatabase() {
             synchronized(this) {
                 val instance = Room.databaseBuilder(context.applicationContext,
                     FoodDatabase::class.java, "food_database")
-                    .allowMainThreadQueries()
                     .build()
                 INSTANCE = instance
                 return instance
