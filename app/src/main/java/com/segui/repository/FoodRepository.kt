@@ -6,5 +6,5 @@ import com.segui.model.Food
 
 class FoodRepository(foodDao: FoodDao) {
 
-    val food: LiveData<List<Food>> = foodDao.getAll()
+    val foodList: LiveData<List<Food>> = foodDao.getAll()
 }
