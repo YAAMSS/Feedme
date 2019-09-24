@@ -7,15 +7,15 @@ import com.segui.database.FoodDatabase
 import com.segui.repository.FoodRepository
 import com.segui.model.Food
 
-class FoodViewModel(application: Application) : AndroidViewModel(Application()){
+class FoodViewModel(application: Application) : AndroidViewModel(application){
 
-    private var foodRepository: FoodRepository
-    var food: LiveData<List<Food>>
+    private val repository: FoodRepository
+    val allFood: LiveData<List<Food>>
 
     init {
         val foodDao = FoodDatabase.getInstance(application).foodDao()
-        foodRepository = FoodRepository(foodDao)
-        food = foodRepository.foodList
+        repository = FoodRepository(foodDao)
+        allFood = repository.foodList
     }
 
 }
